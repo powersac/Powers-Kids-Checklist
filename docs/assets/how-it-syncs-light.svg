@@ -1,0 +1,48 @@
+<svg viewBox="0 0 1140 400" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <!-- palette -->
+  <!-- ink: #201e1d, muted: #605d5d, alex: #1186ac, sam: #d82071, parents: #edbb00, blocked: #9b9797 -->
+
+  <!-- ribbons (drawn before nodes so nodes sit on top) -->
+  <!-- Alex -> Worker -->
+  <path d="M 152,90 C 276,90 276,106 400,106 L 400,164 C 276,164 276,148 152,148 Z" fill="#1186ac" fill-opacity="0.48"/>
+  <!-- Sam -> Worker -->
+  <path d="M 152,164 C 276,164 276,164 400,164 L 400,222 C 276,222 276,222 152,222 Z" fill="#d82071" fill-opacity="0.48"/>
+  <!-- Parents -> Worker -->
+  <path d="M 152,238 C 276,238 276,222 400,222 L 400,292 C 276,292 276,308 152,308 Z" fill="#edbb00" fill-opacity="0.48"/>
+  <!-- Worker -> Shared state -->
+  <path d="M 412,106 C 546,106 546,106 680,106 L 680,276 C 546,276 546,276 412,276 Z" fill="#201e1d" fill-opacity="0.45"/>
+  <!-- Worker -> Blocked -->
+  <path d="M 412,276 C 546,276 546,284 680,284 L 680,300 C 546,300 546,292 412,292 Z" fill="#9b9797" fill-opacity="0.55"/>
+  <!-- Shared state -> Every phone -->
+  <path d="M 692,106 C 836,106 836,106 980,106 L 980,276 C 836,276 836,276 692,276 Z" fill="#201e1d" fill-opacity="0.45"/>
+
+  <!-- nodes -->
+  <rect x="140" y="90"  width="12" height="58" rx="2" fill="#1186ac"/>
+  <rect x="140" y="164" width="12" height="58" rx="2" fill="#d82071"/>
+  <rect x="140" y="238" width="12" height="70" rx="2" fill="#edbb00"/>
+  <rect x="400" y="106" width="12" height="186" rx="2" fill="#201e1d"/>
+  <rect x="680" y="106" width="12" height="170" rx="2" fill="#201e1d"/>
+  <rect x="680" y="284" width="12" height="16"  rx="2" fill="#9b9797"/>
+  <rect x="980" y="106" width="12" height="170" rx="2" fill="#201e1d"/>
+
+  <!-- column 1 labels: right-anchored, left of node -->
+  <text x="132" y="115" text-anchor="end" font-size="15" font-weight="600" fill="#201e1d">Alex</text>
+  <text x="132" y="131" text-anchor="end" font-size="12" fill="#605d5d">their own checks</text>
+  <text x="132" y="189" text-anchor="end" font-size="15" font-weight="600" fill="#201e1d">Sam</text>
+  <text x="132" y="205" text-anchor="end" font-size="12" fill="#605d5d">their own checks</text>
+  <text x="132" y="268" text-anchor="end" font-size="15" font-weight="600" fill="#201e1d">Parents</text>
+  <text x="132" y="284" text-anchor="end" font-size="12" fill="#605d5d">everything</text>
+
+  <!-- column 2 label: centered above -->
+  <text x="406" y="72" text-anchor="middle" font-size="15" font-weight="600" fill="#201e1d">Worker</text>
+  <text x="406" y="88" text-anchor="middle" font-size="12" fill="#605d5d">checks the link</text>
+
+  <!-- column 3 labels -->
+  <text x="686" y="72" text-anchor="middle" font-size="15" font-weight="600" fill="#201e1d">Shared state</text>
+  <text x="686" y="88" text-anchor="middle" font-size="12" fill="#605d5d">one blob, one truth</text>
+  <text x="700" y="296" text-anchor="start" font-size="11" fill="#7d7979">blocked, wrong kid or role</text>
+
+  <!-- column 4 label: left-anchored, right of node -->
+  <text x="1000" y="185" text-anchor="start" font-size="15" font-weight="600" fill="#201e1d">Every phone</text>
+  <text x="1000" y="201" text-anchor="start" font-size="12" fill="#605d5d">polls every 15s</text>
+</svg>

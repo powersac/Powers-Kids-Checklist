@@ -1,0 +1,36 @@
+{
+  // The Worker name; your URL becomes <name>.<your-subdomain>.workers.dev.
+  "name": "powers-kids-checklist",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-29",
+
+  "kv_namespaces": [
+    {
+      // One namespace, one key ("state"), holding { rev, data }.
+      "binding": "STATE",
+      // Create it with: npx wrangler kv namespace create STATE
+      // then paste the id it prints over the placeholder below.
+      "id": "PASTE_YOUR_KV_NAMESPACE_ID"
+    }
+  ],
+
+  // Serves the built React app (index.html, hashed JS/CSS, manifest,
+  // service worker, icons) straight from ../dist. run_worker_first means
+  // every request — including asset paths — reaches fetch() in src/index.ts
+  // first, so it can decide what needs a token and what doesn't, instead of
+  // Cloudflare routing static paths around the Worker entirely.
+  "assets": {
+    "directory": "../dist",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  }
+
+  // ALEX_TOKEN, SAM_TOKEN, PARENT_TOKEN, and PARTNER_TOKEN are Worker
+  // secrets, never stored in this file. Parent and Partner each get their
+  // own admin-level link (two parents, two phones) rather than sharing
+  // one. Set them with:
+  //   npx wrangler secret put ALEX_TOKEN
+  //   npx wrangler secret put SAM_TOKEN
+  //   npx wrangler secret put PARENT_TOKEN
+  //   npx wrangler secret put PARTNER_TOKEN
+}

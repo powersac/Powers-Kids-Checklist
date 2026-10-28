@@ -1,0 +1,16 @@
+{
+  "name": "powers-kids-checklist-worker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "typecheck": "tsc --noEmit",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.2",
+    "wrangler": "^4.0.0"
+  }
+}
